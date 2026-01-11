@@ -1,0 +1,105 @@
+.rsvp {
+  background: linear-gradient(to bottom, var(--ivory), var(--blush));
+  position: relative;
+}
+
+.rsvp-subtitle {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.rsvp-form {
+  margin-top: 30px;
+  text-align: left;
+  max-width: 500px;
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--dusty-rose);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid var(--sage);
+  border-radius: 12px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text-dark);
+  background: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--dusty-rose);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(212, 165, 165, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.rsvp-submit-btn {
+  width: 100%;
+  padding: 18px;
+  background: linear-gradient(135deg, var(--dusty-rose), var(--rose));
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(212, 165, 165, 0.3);
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+.rsvp-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 165, 165, 0.4);
+}
+
+.rsvp-submit-btn:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+  .rsvp-form {
+    max-width: 100%;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+  
+  .rsvp-submit-btn {
+    padding: 15px;
+    font-size: 1.1rem;
+  }
+}
+

@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-cream: #f5f1e8;
+  --color-ivory: #fffef7;
+  --color-paper: #faf8f3;
+  --color-gold: #d4af37;
+  --color-dark-gold: #b8941f;
+  --color-wax-red: #8b2e2e;
+  --color-wax-dark: #6b1f1f;
+  --color-text-dark: #3d3d3d;
+  --color-text-light: #6b6b6b;
+  --font-serif: 'Playfair Display', serif;
+  --font-elegant: 'Cormorant Garamond', serif;
+  --font-script: 'Dancing Script', cursive;
+}
+
+body {
+  font-family: var(--font-elegant);
+  color: var(--color-text-dark);
+  background-color: var(--color-cream);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+

@@ -1,0 +1,117 @@
+.practical-info {
+  background: var(--ivory);
+  position: relative;
+}
+
+.info-section {
+  margin-top: 40px;
+  text-align: left;
+  width: 100%;
+  max-width: 500px;
+}
+
+.info-section-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--dusty-rose);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.map-container {
+  margin-bottom: 30px;
+}
+
+.map-placeholder {
+  background: linear-gradient(135deg, var(--blush), var(--champagne));
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(212, 165, 165, 0.15);
+  text-align: center;
+}
+
+.map-placeholder p {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--text-dark);
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+.map-link {
+  display: inline-block;
+  margin-top: 15px;
+  color: var(--dusty-rose);
+  text-decoration: none;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.map-link:hover {
+  color: var(--rose);
+  text-decoration: underline;
+}
+
+.accommodation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.accommodation-item {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(212, 165, 165, 0.1);
+}
+
+.accommodation-item h4 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--dusty-rose);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.accommodation-item p {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  margin: 5px 0;
+  line-height: 1.6;
+}
+
+.dress-code-text {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  line-height: 1.8;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(212, 165, 165, 0.1);
+}
+
+@media (max-width: 480px) {
+  .info-section-title {
+    font-size: 1.3rem;
+  }
+  
+  .map-placeholder {
+    padding: 20px;
+  }
+  
+  .accommodation-item h4 {
+    font-size: 1.1rem;
+  }
+  
+  .dress-code-text {
+    font-size: 1rem;
+    padding: 20px;
+  }
+}
+

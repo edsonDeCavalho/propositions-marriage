@@ -1,0 +1,10 @@
+.mainContent {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--color-cream);
+}
+
+.mainContent section {
+  width: 100%;
+}
+
