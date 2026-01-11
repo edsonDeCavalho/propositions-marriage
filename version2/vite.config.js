@@ -12,6 +12,13 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 91,
     strictPort: true,
+    allowedHosts: [
+      'v1marige.shareprinto.com',
+      'v2marige.shareprinto.com',
+      'v3marige.shareprinto.com',
+      'v4marige.shareprinto.com',
+      '51.178.142.95',
+    ],
   },
 })
 
