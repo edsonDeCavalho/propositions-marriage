@@ -2,9 +2,8 @@ export default {
   apps: [
     {
       name: 'version1',
-      cwd: './version1',
-      script: 'npm',
-      args: 'run preview',
+      script: './version1/start-preview.sh',
+      interpreter: 'bash',
       instances: 1,
       autorestart: true,
       watch: false,
@@ -19,9 +18,8 @@ export default {
     },
     {
       name: 'version2',
-      cwd: './version2',
-      script: 'npm',
-      args: 'run preview',
+      script: './version2/start-preview.sh',
+      interpreter: 'bash',
       instances: 1,
       autorestart: true,
       watch: false,
@@ -36,9 +34,8 @@ export default {
     },
     {
       name: 'version3',
-      cwd: './version3',
-      script: 'npm',
-      args: 'run preview',
+      script: './version3/start-preview.sh',
+      interpreter: 'bash',
       instances: 1,
       autorestart: true,
       watch: false,
@@ -53,9 +50,8 @@ export default {
     },
     {
       name: 'version4',
-      cwd: './version4',
-      script: 'npm',
-      args: 'run preview',
+      script: './version4/start-preview.sh',
+      interpreter: 'bash',
       instances: 1,
       autorestart: true,
       watch: false,
