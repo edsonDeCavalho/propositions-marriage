@@ -1,18 +1,19 @@
 /* Variables CSS pour faciliter la personnalisation */
 :root {
-    --color-primary: #E5D2B8;
-    --color-secondary: #D2AB80;
-    --color-accent: #809671;
-    --color-text: #725C3A;
-    --color-text-dark: #725C3A;
-    --color-white: #FFFFFF;
-    --color-cream: #E5E0D8;
-    --color-pastel-pink: #E5D2B8;
-    --color-pastel-blue: #B3B792;
-    --color-pastel-green: #809671;
+    --color-primary: #d9ccb9;
+    --color-secondary: #736b56;
+    --color-accent: #949881;
+    --color-text: #736b56;
+    --color-text-dark: #343724;
+    --color-white: #f3ecda;
+    --color-cream: #f3ecda;
+    --color-pastel-pink: #d9ccb9;
+    --color-pastel-blue: #c2cbb0;
+    --color-pastel-green: #949881;
     
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'Montserrat', sans-serif;
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Cormorant Garamond', serif;
+    --font-plume: 'Great Vibes', cursive;
     
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
@@ -38,10 +39,16 @@ html {
 
 body {
     font-family: var(--font-body);
+    font-style: italic;
     color: var(--color-text);
     line-height: 1.6;
     background-color: var(--color-cream);
     overflow-x: hidden;
+}
+
+/* Emojis affichés en droit (pas en italique) */
+.emoji {
+    font-style: normal;
 }
 
 .container {
@@ -157,6 +164,8 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    padding-top: 100px;
+    box-sizing: border-box;
 }
 
 .hero-image {
@@ -203,25 +212,66 @@ body {
 }
 
 .hero-ampersand {
+    font-family: var(--font-plume);
     font-size: 4rem;
     color: var(--color-pastel-pink);
     margin: 0 1rem;
 }
 
-.hero-tagline {
-    font-size: 1.5rem;
-    font-weight: 300;
+.hero-countdown {
     margin-bottom: var(--spacing-md);
-    font-style: italic;
+    animation: fadeInUp 1s ease 0.15s both;
+}
+
+.hero-countdown-label {
+    font-family: var(--font-plume);
+    font-size: 1.35rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.5rem;
+    opacity: 0.95;
+}
+
+.hero-countdown-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.hero-countdown-item {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.hero-countdown-item strong {
+    display: block;
+    font-size: 1.75rem;
+    font-family: var(--font-heading);
+}
+
+.hero-countdown-date {
+    font-family: var(--font-plume);
+    font-size: 1.15rem;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+}
+
+.hero-tagline {
+    font-family: var(--font-plume);
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: var(--spacing-md);
     animation: fadeInUp 1s ease 0.2s both;
 }
 
 .hero-date {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: var(--spacing-sm);
-    margin-top: var(--spacing-md);
+    margin-top: var(--spacing-xl);
     animation: fadeInUp 1s ease 0.4s both;
 }
 
@@ -241,22 +291,6 @@ body {
 .date-year {
     font-size: 2rem;
     font-weight: 400;
-}
-
-.hero-scroll {
-    position: absolute;
-    bottom: 60px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    color: var(--color-white);
-    animation: bounce 2s infinite;
-    cursor: pointer;
-}
-
-.scroll-arrow {
-    font-size: 2rem;
-    margin-top: var(--spacing-xs);
 }
 
 /* Section Notre Histoire */
@@ -317,6 +351,7 @@ body {
 .timeline-icon {
     font-size: 2.5rem;
     flex-shrink: 0;
+    font-style: normal;
 }
 
 .timeline-content h3 {
@@ -377,6 +412,7 @@ body {
 .info-icon {
     font-size: 3rem;
     margin-bottom: var(--spacing-sm);
+    font-style: normal;
 }
 
 .info-card h3 {
@@ -389,6 +425,162 @@ body {
 .info-card p {
     color: var(--color-text);
     line-height: 1.8;
+}
+
+/* Section Lieu */
+.lieu {
+    padding: var(--spacing-xl) 0;
+    background: var(--color-white);
+}
+
+.lieu-flower-deco {
+    display: block;
+    max-width: min(200px, 25vw);
+    height: auto;
+    margin: 0 auto var(--spacing-md);
+    opacity: 0.88;
+}
+
+.lieu-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    align-items: start;
+}
+
+.lieu-image {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-medium);
+}
+
+.lieu-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.lieu-name {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--color-text-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.lieu-intro {
+    font-size: 1.05rem;
+    color: var(--color-text);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+}
+
+.lieu-address {
+    margin-bottom: var(--spacing-sm);
+}
+
+.lieu-address strong {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--color-text-dark);
+    margin-bottom: 0.25rem;
+}
+
+.lieu-address p {
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.lieu-waze {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+    font-style: italic;
+}
+
+.lieu-desc {
+    font-size: 0.98rem;
+    color: var(--color-text);
+    line-height: 1.75;
+    margin-bottom: var(--spacing-md);
+}
+
+.lieu-gallery-link {
+    display: inline-block;
+    color: var(--color-accent);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.lieu-gallery-link:hover {
+    color: var(--color-secondary);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .lieu-content {
+        grid-template-columns: 1fr;
+    }
+    .lieu-image {
+        order: -1;
+    }
+}
+
+/* Section Témoins */
+.témoins {
+    padding: var(--spacing-xl) 0;
+    background: var(--color-white);
+}
+
+.témoins-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--spacing-xl);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.témoin-card {
+    text-align: center;
+}
+
+.témoin-photo-wrap {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto var(--spacing-md);
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    border: 4px solid var(--color-pastel-pink);
+}
+
+.témoin-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.témoin-name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--color-text-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.témoin-contact {
+    display: block;
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 1rem;
+    margin-bottom: var(--spacing-xs);
+    transition: color 0.2s ease;
+}
+
+.témoin-contact:hover {
+    color: var(--color-accent);
 }
 
 /* Section Programme */
@@ -625,6 +817,86 @@ body {
     margin: 0;
 }
 
+.form-error {
+    display: block;
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: var(--spacing-xs);
+}
+
+.form-group-plus-un .rsvp-notice {
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+    margin-top: var(--spacing-xs);
+    font-style: italic;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+.enfants-block {
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-sm);
+    background: rgba(0,0,0,0.04);
+    border-radius: var(--border-radius);
+}
+
+.enfants-info {
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text);
+}
+
+.enfant-row {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.enfant-row input {
+    flex: 1;
+    min-width: 0;
+}
+
+.enfant-row input.input-error {
+    border-color: #e74c3c;
+}
+
+.btn-remove-enfant {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--color-secondary);
+    background: var(--color-white);
+    color: var(--color-text);
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.btn-add-enfant {
+    margin-top: var(--spacing-xs);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.95rem;
+    background: transparent;
+    border: 1px dashed var(--color-accent);
+    color: var(--color-accent);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-family: var(--font-body);
+}
+
 .btn-submit {
     width: 100%;
     padding: var(--spacing-sm) var(--spacing-md);
@@ -768,6 +1040,7 @@ body {
 .dresscode-icon {
     font-size: 3rem;
     margin-bottom: var(--spacing-sm);
+    font-style: normal;
 }
 
 .dresscode-card h3 {
@@ -801,6 +1074,31 @@ body {
     left: 0;
     color: var(--color-accent);
     font-weight: bold;
+}
+
+.dresscode-colors-label {
+    font-size: 0.9rem;
+    color: var(--color-text-dark);
+    margin-top: var(--spacing-sm);
+    margin-bottom: 0.35rem;
+}
+.dresscode-colors-label:first-of-type { margin-top: 0; }
+
+.dresscode-swatches {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.dresscode-swatch {
+    display: inline-block;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    border: 2px solid rgba(0,0,0,0.1);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 /* Footer */
@@ -922,6 +1220,10 @@ body {
     .date-month,
     .date-year {
         font-size: 1.5rem;
+    }
+    
+    .hero-date {
+        flex-direction: row;
     }
     
     .section-title {

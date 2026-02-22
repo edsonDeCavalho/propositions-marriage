@@ -10,7 +10,7 @@ const InfosPratiques = () => {
           <div className="info-card">
             <div className="info-icon">📅</div>
             <h3>Date</h3>
-            <p>Samedi 15 Juin 2024</p>
+            <p>Samedi 26 Mars 2027</p>
           </div>
           <div className="info-card">
             <div className="info-icon">⏰</div>
@@ -19,22 +19,15 @@ const InfosPratiques = () => {
           </div>
           <div className="info-card">
             <div className="info-icon">📍</div>
-            <h3>Lieu de la Cérémonie</h3>
-            <p>
-              {/* Modifiez avec votre adresse */}
-              Mairie de [Votre Ville]<br />
-              123 Rue de la Mairie<br />
-              75000 [Votre Ville]
-            </p>
+            <h3>Lieu</h3>
+            <p>L&apos;Orangerie de l&apos;Orée du Bois<br />D113, 78710 Rosny-sur-Seine</p>
+            <a href="#lieu" style={{ marginTop: '0.5rem', fontSize: '0.95rem', display: 'inline-block', color: 'inherit', textDecoration: 'underline' }}>Découvrir le lieu →</a>
           </div>
           <div className="info-card">
             <div className="info-icon">🍽️</div>
             <h3>Réception & Dîner</h3>
             <p>
-              {/* Modifiez avec votre lieu de réception */}
-              [Nom du Lieu de Réception]<br />
-              456 Avenue de la Réception<br />
-              75000 [Votre Ville]<br />
+              Cérémonie, cocktail et dîner au même domaine, au cœur de la forêt de Rosny-sur-Seine (Yvelines).
               <span className="info-time">À partir de 17h00</span>
             </p>
           </div>

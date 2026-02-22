@@ -39,8 +39,23 @@ const DressCode = () => {
             <ul>
               <li>Pour les hommes : Costume ou tenue habillée</li>
               <li>Pour les femmes : Robe de cocktail ou tenue élégante</li>
-              <li>Palette de couleurs : Tons pastels et couleurs douces</li>
             </ul>
+          </div>
+          <div className="dresscode-card dresscode-colors">
+            <div className="dresscode-icon">🎨</div>
+            <h3>Palette de couleurs</h3>
+            <p className="dresscode-colors-label">Pour les hommes</p>
+            <div className="dresscode-swatches">
+              <span className="dresscode-swatch" style={{ backgroundColor: '#c5c6be' }} title="#c5c6be" />
+              <span className="dresscode-swatch" style={{ backgroundColor: '#b79973' }} title="#b79973" />
+            </div>
+            <p className="dresscode-colors-label">Pour les femmes</p>
+            <div className="dresscode-swatches">
+              <span className="dresscode-swatch" style={{ backgroundColor: '#503a2d' }} title="#503a2d" />
+              <span className="dresscode-swatch" style={{ backgroundColor: '#dbcbbc' }} title="#dbcbbc" />
+              <span className="dresscode-swatch" style={{ backgroundColor: '#c09d9b' }} title="#c09d9b" />
+              <span className="dresscode-swatch" style={{ backgroundColor: '#999f85' }} title="#999f85" />
+            </div>
           </div>
           <div className="dresscode-card">
             <div className="dresscode-icon">🌤️</div>

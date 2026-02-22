@@ -3,7 +3,9 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Story from './components/Story'
 import Info from './components/Info'
+import Lieu from './components/Lieu'
 import Program from './components/Program'
+import Témoins from './components/Témoins'
 import Gallery from './components/Gallery'
 import RSVP from './components/RSVP'
 import Accommodation from './components/Accommodation'
@@ -17,7 +19,9 @@ function App() {
       <Hero />
       <Story />
       <Info />
+      <Lieu />
       <Program />
+      <Témoins />
       <Gallery />
       <RSVP />
       <Accommodation />

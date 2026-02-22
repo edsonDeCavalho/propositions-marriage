@@ -27,11 +27,11 @@
   left: 50%;
   transform: translateX(-50%);
   width: 100px;
-  height: 1px;
+  height: 2px;
   background: linear-gradient(
     to right,
     transparent,
-    var(--color-gold),
+    var(--color-text-dark),
     transparent
   );
 }
@@ -59,6 +59,7 @@
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(243, 236, 218, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -78,7 +79,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(243, 236, 218, 0.15);
 }
 
 .placeholderText {

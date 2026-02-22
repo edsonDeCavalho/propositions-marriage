@@ -5,24 +5,27 @@
 }
 
 :root {
-  --color-cream: #f5f1e8;
-  --color-ivory: #fffef7;
-  --color-paper: #faf8f3;
-  --color-gold: #d4af37;
-  --color-dark-gold: #b8941f;
+  --color-cream: #343724;
+  --color-ivory: #3d4230;
+  --color-paper: #3d4230;
+  --color-gold: #949881;
+  --color-dark-gold: #736b56;
+  --color-dark: #343724;
+  --color-text: #f3ecda;
   --color-wax-red: #8b2e2e;
   --color-wax-dark: #6b1f1f;
-  --color-text-dark: #3d3d3d;
-  --color-text-light: #6b6b6b;
-  --font-serif: 'Playfair Display', serif;
+  --color-text-dark: #f3ecda;
+  --color-text-light: rgba(243, 236, 218, 0.85);
+  --font-serif: 'Cormorant Garamond', serif;
   --font-elegant: 'Cormorant Garamond', serif;
   --font-script: 'Dancing Script', cursive;
 }
 
 body {
   font-family: var(--font-elegant);
+  font-style: italic;
   color: var(--color-text-dark);
-  background-color: var(--color-cream);
+  background-color: #343724;
   overflow-x: hidden;
   line-height: 1.6;
 }

@@ -42,18 +42,20 @@ const CarteHebergement = () => {
           </div>
           
           <div className="carte-info">
-            <h3>📍 Lieu de la Cérémonie</h3>
+            <h3><span className="emoji">📍</span> Lieu du mariage</h3>
             <p>
-              {/* Modifiez avec votre adresse */}
-              Mairie de [Votre Ville]<br />
-              123 Rue de la Mairie<br />
-              75000 [Votre Ville]
+              L&apos;Orangerie de l&apos;Orée du Bois<br />
+              D113, 78710 Rosny-sur-Seine<br />
+              Dans Waze : « L&apos;Orangerie de l&apos;Orée du Bois, Rosny sur Seine »
+            </p>
+            <p style={{ marginTop: '0.75rem' }}>
+              <a href="https://www.lorangeriedeloreedubois.com/galerie" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Galerie photos du lieu →</a>
             </p>
           </div>
         </div>
 
         <div className="hebergement-section">
-          <h3 className="hebergement-title">💤 Suggestions d'Hébergement</h3>
+          <h3 className="hebergement-title"><span className="emoji">💤</span> Suggestions d'Hébergement</h3>
           <p className="hebergement-intro">
             Pour votre confort, voici quelques suggestions d'hôtels à proximité :
           </p>
@@ -63,8 +65,8 @@ const CarteHebergement = () => {
               <div key={index} className="hotel-card">
                 <h4>{hotel.name}</h4>
                 <p className="hotel-address">{hotel.address}</p>
-                <p className="hotel-distance">📍 {hotel.distance}</p>
-                <p className="hotel-phone">📞 {hotel.phone}</p>
+                <p className="hotel-distance"><span className="emoji">📍</span> {hotel.distance}</p>
+                <p className="hotel-phone"><span className="emoji">📞</span> {hotel.phone}</p>
                 <a href={hotel.link} className="hotel-link" target="_blank" rel="noopener noreferrer">
                   Voir sur la carte →
                 </a>

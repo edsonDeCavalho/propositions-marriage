@@ -11,11 +11,26 @@ const DressCode = () => {
             <div className="dress-code-icon">👔</div>
             <h3>Dress Code</h3>
             <p>
-              {/* Modifiez selon vos préférences */}
-              Tenue élégante et raffinée<br />
-              Couleurs douces et pastels appréciées<br />
-              Éviter le blanc et le noir strict
+              Tenue élégante et raffinée.<br />
+              Éviter le blanc (réservé à la mariée).
             </p>
+          </div>
+
+          <div className="dress-code-card dress-code-colors">
+            <div className="dress-code-icon">🎨</div>
+            <h3>Palette de couleurs</h3>
+            <p className="dress-code-colors-label">Pour les hommes</p>
+            <div className="dress-code-swatches">
+              <span className="dress-code-swatch" style={{ backgroundColor: '#c5c6be' }} title="#c5c6be" />
+              <span className="dress-code-swatch" style={{ backgroundColor: '#b79973' }} title="#b79973" />
+            </div>
+            <p className="dress-code-colors-label">Pour les femmes</p>
+            <div className="dress-code-swatches">
+              <span className="dress-code-swatch" style={{ backgroundColor: '#503a2d' }} title="#503a2d" />
+              <span className="dress-code-swatch" style={{ backgroundColor: '#dbcbbc' }} title="#dbcbbc" />
+              <span className="dress-code-swatch" style={{ backgroundColor: '#c09d9b' }} title="#c09d9b" />
+              <span className="dress-code-swatch" style={{ backgroundColor: '#999f85' }} title="#999f85" />
+            </div>
           </div>
           
           <div className="dress-code-card">
@@ -32,7 +47,7 @@ const DressCode = () => {
             <h3>Photos</h3>
             <p>
               N'hésitez pas à prendre des photos et à les partager<br />
-              avec le hashtag <strong>#YannickEtLydia2024</strong>
+              avec le hashtag <strong>#YannickEtLydia2027</strong>
             </p>
           </div>
           

@@ -28,6 +28,7 @@
 .info-icon {
   font-size: 3rem;
   margin-bottom: var(--spacing-sm);
+  font-style: normal;
 }
 
 .info-card h3 {

@@ -28,6 +28,7 @@
 .dress-code-icon {
   font-size: 3rem;
   margin-bottom: var(--spacing-sm);
+  font-style: normal;
 }
 
 .dress-code-card h3 {
@@ -46,6 +47,34 @@
 .dress-code-card strong {
   color: var(--color-accent);
   font-weight: 600;
+}
+
+.dress-code-colors-label {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  margin-top: var(--spacing-sm);
+  margin-bottom: 0.35rem;
+}
+
+.dress-code-colors-label:first-of-type {
+  margin-top: 0;
+}
+
+.dress-code-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.dress-code-swatch {
+  display: inline-block;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {

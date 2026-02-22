@@ -12,6 +12,7 @@
   transform: translateX(-50%);
   font-size: 3rem;
   opacity: 0.1;
+  font-style: normal;
 }
 
 .histoire-content {
@@ -68,6 +69,7 @@
   flex-shrink: 0;
   position: relative;
   z-index: 2;
+  font-style: normal;
 }
 
 .timeline-content {

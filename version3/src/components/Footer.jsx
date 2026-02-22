@@ -15,8 +15,8 @@ const Footer = () => {
             <h4>Contact</h4>
             <p>
               {/* Modifiez avec vos coordonnées */}
-              📧 contact@yannick-lydia.fr<br />
-              📞 +33 X XX XX XX XX
+              <span className="emoji">📧</span> contact@yannick-lydia.fr<br />
+              <span className="emoji">📞</span> +33 X XX XX XX XX
             </p>
           </div>
           
@@ -37,10 +37,10 @@ const Footer = () => {
         <div className="footer-bottom">
           <p>
             Avec tout notre amour, Yannick & Lydia<br />
-            <span className="footer-date">15 Juin 2024</span>
+            <span className="footer-date">26 Mars 2027</span>
           </p>
           <p className="footer-thanks">
-            Merci de partager ce moment si spécial avec nous ❤️
+            Merci de partager ce moment si spécial avec nous <span className="emoji">❤️</span>
           </p>
         </div>
       </div>

@@ -5,19 +5,19 @@
 }
 
 :root {
-  --color-primary: #F5E6E0;
-  --color-secondary: #E8D5C4;
-  --color-accent: #D4A574;
-  --color-text: #5A4A42;
-  --color-text-light: #8B7A6B;
-  --color-white: #FFFFFF;
-  --color-cream: #FDF8F3;
-  --color-pastel-pink: #F8E8E8;
-  --color-pastel-rose: #F5D7D7;
-  --color-pastel-beige: #F0E6D2;
+  --color-primary: #d9ccb9;
+  --color-secondary: #736b56;
+  --color-accent: #949881;
+  --color-text: #343724;
+  --color-text-light: #736b56;
+  --color-white: #f3ecda;
+  --color-cream: #f3ecda;
+  --color-pastel-pink: #c2cbb0;
+  --color-pastel-rose: #949881;
+  --color-pastel-beige: #d9ccb9;
   
-  --font-heading: 'Playfair Display', serif;
-  --font-body: 'Poppins', sans-serif;
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Cormorant Garamond', serif;
   
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
@@ -26,8 +26,8 @@
   --spacing-xl: 4rem;
   
   --border-radius: 12px;
-  --shadow-soft: 0 4px 20px rgba(90, 74, 66, 0.08);
-  --shadow-medium: 0 8px 30px rgba(90, 74, 66, 0.12);
+  --shadow-soft: 0 4px 20px rgba(52, 55, 36, 0.08);
+  --shadow-medium: 0 8px 30px rgba(52, 55, 36, 0.12);
 }
 
 html {
@@ -36,10 +36,16 @@ html {
 
 body {
   font-family: var(--font-body);
+  font-style: italic;
   color: var(--color-text);
   line-height: 1.6;
   background-color: var(--color-cream);
   overflow-x: hidden;
+}
+
+/* Emojis affichés en droit (pas en italique) */
+.emoji {
+  font-style: normal;
 }
 
 .container {
@@ -50,8 +56,9 @@ body {
 
 .section-title {
   font-family: var(--font-heading);
+  font-style: italic;
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--color-text);
   text-align: center;
   margin-bottom: var(--spacing-md);

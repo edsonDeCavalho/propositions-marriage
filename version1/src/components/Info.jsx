@@ -35,7 +35,7 @@ const Info = () => {
           <div className="info-card">
             <div className="info-icon">📅</div>
             <h3>Date</h3>
-            <p>Samedi 15 Juin 2024</p>
+            <p>Samedi 26 Mars 2027</p>
           </div>
           <div className="info-card">
             <div className="info-icon">⏰</div>
@@ -44,13 +44,14 @@ const Info = () => {
           </div>
           <div className="info-card">
             <div className="info-icon">📍</div>
-            <h3>Cérémonie</h3>
-            <p>Mairie de [Votre Ville]<br />Place de la Mairie<br />12345 [Votre Ville]</p>
+            <h3>Lieu</h3>
+            <p>L&apos;Orangerie de l&apos;Orée du Bois<br />D113, 78710 Rosny-sur-Seine</p>
+            <a href="#lieu" style={{ marginTop: '0.5rem', fontSize: '0.95rem', display: 'inline-block', color: 'inherit', textDecoration: 'underline' }}>Découvrir le lieu →</a>
           </div>
           <div className="info-card">
             <div className="info-icon">🍾</div>
             <h3>Réception</h3>
-            <p>[Nom du Lieu]<br />[Adresse complète]<br />12345 [Ville]</p>
+            <p>Même lieu : cérémonie, cocktail et dîner au domaine. À partir de 17h00.</p>
           </div>
         </div>
       </div>

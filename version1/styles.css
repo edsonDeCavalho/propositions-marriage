@@ -218,10 +218,11 @@ body {
 
 .hero-date {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: var(--spacing-sm);
-    margin-top: var(--spacing-md);
+    margin-top: var(--spacing-xl);
     animation: fadeInUp 1s ease 0.4s both;
 }
 
@@ -245,6 +246,7 @@ body {
 
 .hero-scroll {
     position: absolute;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -916,10 +918,14 @@ body {
     .date-day {
         font-size: 3rem;
     }
-    
+
     .date-month,
     .date-year {
         font-size: 1.5rem;
+    }
+
+    .hero-date {
+        flex-direction: row;
     }
     
     .section-title {

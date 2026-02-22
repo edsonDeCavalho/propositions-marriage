@@ -2,7 +2,9 @@ import React from 'react'
 import Hero from './components/Hero'
 import NotreHistoire from './components/NotreHistoire'
 import InfosPratiques from './components/InfosPratiques'
+import Lieu from './components/Lieu'
 import Programme from './components/Programme'
+import Témoins from './components/Témoins'
 import Galerie from './components/Galerie'
 import RSVP from './components/RSVP'
 import CarteHebergement from './components/CarteHebergement'
@@ -16,7 +18,9 @@ function App() {
       <Hero />
       <NotreHistoire />
       <InfosPratiques />
+      <Lieu />
       <Programme />
+      <Témoins />
       <Galerie />
       <RSVP />
       <CarteHebergement />

@@ -1,0 +1,15 @@
+{
+  "name": "yannick-rsvp-server",
+  "version": "1.0.0",
+  "description": "API RSVP et stockage CSV pour le mariage Yannick & Lydia",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}

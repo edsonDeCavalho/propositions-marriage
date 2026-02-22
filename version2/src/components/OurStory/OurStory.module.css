@@ -27,11 +27,11 @@
   left: 50%;
   transform: translateX(-50%);
   width: 100px;
-  height: 1px;
+  height: 2px;
   background: linear-gradient(
     to right,
     transparent,
-    var(--color-gold),
+    var(--color-text-dark),
     transparent
   );
 }

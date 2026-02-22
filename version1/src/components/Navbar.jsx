@@ -33,7 +33,9 @@ const Navbar = () => {
           <li><a href="#accueil" className="nav-link" onClick={(e) => handleNavClick(e, '#accueil')}>Accueil</a></li>
           <li><a href="#histoire" className="nav-link" onClick={(e) => handleNavClick(e, '#histoire')}>Notre Histoire</a></li>
           <li><a href="#infos" className="nav-link" onClick={(e) => handleNavClick(e, '#infos')}>Infos</a></li>
+          <li><a href="#lieu" className="nav-link" onClick={(e) => handleNavClick(e, '#lieu')}>Lieu</a></li>
           <li><a href="#programme" className="nav-link" onClick={(e) => handleNavClick(e, '#programme')}>Programme</a></li>
+          <li><a href="#témoins" className="nav-link" onClick={(e) => handleNavClick(e, '#témoins')}>Témoins</a></li>
           <li><a href="#galerie" className="nav-link" onClick={(e) => handleNavClick(e, '#galerie')}>Galerie</a></li>
         </ul>
         <a href="#rsvp" className="nav-rsvp-btn" onClick={(e) => handleNavClick(e, '#rsvp')}>RSVP</a>

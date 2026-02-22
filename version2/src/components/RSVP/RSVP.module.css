@@ -27,11 +27,11 @@
   left: 50%;
   transform: translateX(-50%);
   width: 100px;
-  height: 1px;
+  height: 2px;
   background: linear-gradient(
     to right,
     transparent,
-    var(--color-gold),
+    var(--color-text-dark),
     transparent
   );
 }
@@ -75,9 +75,9 @@
   font-family: var(--font-elegant);
   font-size: 1.1rem;
   padding: 1rem;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(243, 236, 218, 0.3);
   border-radius: 4px;
-  background: var(--color-cream);
+  background: var(--color-ivory);
   color: var(--color-text-dark);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -86,8 +86,8 @@
 .select:focus,
 .textarea:focus {
   outline: none;
-  border-color: var(--color-gold);
-  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+  border-color: rgba(243, 236, 218, 0.5);
+  box-shadow: 0 0 0 3px rgba(243, 236, 218, 0.1);
 }
 
 .textarea {
@@ -95,16 +95,109 @@
   min-height: 120px;
 }
 
+.formError {
+  font-size: 0.9rem;
+  color: #e74c3c;
+  margin-top: 0.25rem;
+}
+
+.notice {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.checkboxLabel input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+}
+
+.radioRow {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.radioLabel input[type="radio"] {
+  width: auto;
+  margin: 0;
+}
+
+.enfantsBlock {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+}
+
+.enfantsInfo {
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-dark);
+}
+
+.enfantRow {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.enfantRow .input {
+  flex: 1;
+  min-width: 0;
+}
+
+.btnRemoveEnfant {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(243, 236, 218, 0.5);
+  background: var(--color-ivory);
+  color: var(--color-text-dark);
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.btnAddEnfant {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  background: transparent;
+  border: 1px dashed rgba(243, 236, 218, 0.6);
+  color: var(--color-text-dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--font-elegant);
+}
+
 .submitButton {
   font-family: var(--font-elegant);
   font-size: 1.2rem;
   padding: 1.2rem 3rem;
-  background: var(--color-gold);
-  color: var(--color-ivory);
+  background: var(--color-text-dark);
+  color: var(--color-dark);
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
+  transition: background 0.3s ease, transform 0.2s ease, opacity 0.2s ease;
   letter-spacing: 0.1em;
   font-weight: 400;
   margin-top: 1rem;
@@ -113,7 +206,8 @@
 }
 
 .submitButton:hover {
-  background: var(--color-dark-gold);
+  opacity: 0.92;
+  color: var(--color-dark);
   transform: translateY(-2px);
 }
 
@@ -124,9 +218,10 @@
 .successMessage {
   text-align: center;
   padding: 4rem 2rem;
-  background: var(--color-cream);
+  background: var(--color-ivory);
   border-radius: 8px;
   margin-top: 3rem;
+  border: 1px solid rgba(243, 236, 218, 0.2);
 }
 
 .successMessage p {
