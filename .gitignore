@@ -70,6 +70,10 @@ out
 .cache/
 public
 
+# Exceptions : inclure les images du site mariage (version1)
+!version1/public/
+!version1/public/**
+
 # Storybook build outputs
 .out
 .storybook-out

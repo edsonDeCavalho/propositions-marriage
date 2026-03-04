@@ -1,9 +1,10 @@
 import React from 'react'
 
+const base = import.meta.env.BASE_URL
 const images = [
-  '/images/love-story-1.png',
-  '/images/love-story-2.png',
-  '/images/love-story-3.png'
+  `${base}images/love-story-1.png`,
+  `${base}images/love-story-2.png`,
+  `${base}images/love-story-3.png`
 ]
 
 const Gallery = () => {
