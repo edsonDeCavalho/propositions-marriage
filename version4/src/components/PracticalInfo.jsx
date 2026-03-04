@@ -4,7 +4,7 @@ const PracticalInfo = () => {
   return (
     <section className="practical-info">
       <div className="section-content fade-in-on-scroll">
-        <h2 className="section-title">Informations Pratiques</h2>
+        <h2 className="section-title">Détails du Mariage</h2>
         
         <div className="info-section">
           <h3 className="info-section-title">📍 Plan d'accès</h3>

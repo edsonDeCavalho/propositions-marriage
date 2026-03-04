@@ -7,7 +7,6 @@ import Programme from './components/Programme'
 import Témoins from './components/Témoins'
 import Galerie from './components/Galerie'
 import RSVP from './components/RSVP'
-import CarteHebergement from './components/CarteHebergement'
 import DressCode from './components/DressCode'
 import Footer from './components/Footer'
 import './styles/App.css'
@@ -23,7 +22,6 @@ function App() {
       <Témoins />
       <Galerie />
       <RSVP />
-      <CarteHebergement />
       <DressCode />
       <Footer />
     </div>

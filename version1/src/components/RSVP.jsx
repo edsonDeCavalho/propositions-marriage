@@ -9,6 +9,8 @@ const RSVP = () => {
     telephone: '',
     attendance: '',
     plusUn: false,
+    plusUnNom: '',
+    plusUnRelation: '',
     dietary: '',
     hasEnfants: '',
     message: ''
@@ -50,10 +52,13 @@ const RSVP = () => {
   const validateForm = () => {
     const newErrors = {}
     if (!formData.name.trim()) newErrors.name = 'Le nom est requis'
-    if (!formData.email.trim()) newErrors.email = 'L\'email est requis'
     if (!formData.telephone.trim()) newErrors.telephone = 'Le téléphone est requis'
     if (!formData.attendance) newErrors.attendance = 'Veuillez indiquer votre présence'
     if (!formData.dietary.trim()) newErrors.dietary = 'Les préférences alimentaires sont requises'
+    if (formData.plusUn) {
+      if (!formData.plusUnNom.trim()) newErrors.plusUnNom = 'Le nom et prénom du +1 sont requis'
+      if (!formData.plusUnRelation.trim()) newErrors.plusUnRelation = 'Merci de préciser la relation'
+    }
     if (!formData.hasEnfants) newErrors.hasEnfants = 'Veuillez indiquer si vous avez des enfants'
     if (formData.hasEnfants === 'oui') {
       if (enfants.length === 0) {
@@ -80,9 +85,14 @@ const RSVP = () => {
     }
     setSubmitError(null)
     setSubmitting(true)
+    const messagePlusUn =
+      formData.plusUn && (formData.plusUnNom || formData.plusUnRelation)
+        ? `\n+1 : ${formData.plusUnNom || ''}${formData.plusUnRelation ? ` (${formData.plusUnRelation})` : ''}`
+        : ''
     const payload = {
       ...formData,
       enfants: formData.hasEnfants === 'oui' ? enfants : [],
+      message: (formData.message || '') + messagePlusUn,
       version: 'version1'
     }
     try {
@@ -124,7 +134,7 @@ const RSVP = () => {
         <p className="rsvp-subtitle">Votre présence rendra ce jour encore plus spécial</p>
         <form className="rsvp-form" onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="name">Nom et Prénom *</label>
+            <label htmlFor="name">Nom et Prénom * (attention orthographe exact)</label>
             <input
               type="text"
               id="name"
@@ -138,18 +148,16 @@ const RSVP = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="email">Mail *</label>
+            <label htmlFor="email">Mail (optionnel)</label>
             <input
               type="email"
               id="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              required
               placeholder="votre@email.fr"
               style={{ borderColor: errors.email ? '#e74c3c' : '' }}
             />
-            {errors.email && <span className="form-error">{errors.email}</span>}
           </div>
 
           <div className="form-group">
@@ -209,6 +217,39 @@ const RSVP = () => {
             <p className="rsvp-notice">
               Sans décision préalable des mariés, le +1 sera à confirmer par les mariés.
             </p>
+            {formData.plusUn && (
+              <div className="plusun-block">
+                <div className="enfant-row">
+                  <input
+                    type="text"
+                    name="plusUnNom"
+                    placeholder="Nom et prénom du +1"
+                    value={formData.plusUnNom}
+                    onChange={handleChange}
+                    className={errors.plusUnNom ? 'input-error' : ''}
+                  />
+                  <select
+                    name="plusUnRelation"
+                    value={formData.plusUnRelation}
+                    onChange={handleChange}
+                    className={errors.plusUnRelation ? 'input-error' : ''}
+                  >
+                    <option value="">Relation avec vous</option>
+                    <option value="Conjoint(e) / Partenaire">Conjoint(e) / Partenaire</option>
+                    <option value="Ami(e)">Ami(e)</option>
+                    <option value="Frère / Sœur">Frère / Sœur</option>
+                    <option value="Parent">Parent</option>
+                    <option value="Collègue">Collègue</option>
+                    <option value="Autre">Autre</option>
+                  </select>
+                </div>
+                {(errors.plusUnNom || errors.plusUnRelation) && (
+                  <span className="form-error">
+                    {errors.plusUnNom || errors.plusUnRelation}
+                  </span>
+                )}
+              </div>
+            )}
           </div>
 
           <div className="form-group">

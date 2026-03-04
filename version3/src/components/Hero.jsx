@@ -31,22 +31,20 @@ const Hero = () => {
       <div className="hero-overlay"></div>
       <div className="hero-content">
         <h1 className="hero-names">Yannick & Lydia</h1>
+        <div className="hero-date">
+          <span className="date-day">26</span>
+          <span className="date-month">Mars</span>
+          <span className="date-year">2027</span>
+        </div>
         <div className="hero-countdown">
-          <p className="hero-countdown-label">Plus que</p>
           <div className="hero-countdown-grid">
             <span className="hero-countdown-item"><strong>{countdown.days}</strong> jours</span>
             <span className="hero-countdown-item"><strong>{countdown.hours}</strong> h</span>
             <span className="hero-countdown-item"><strong>{countdown.minutes}</strong> min</span>
             <span className="hero-countdown-item"><strong>{countdown.seconds}</strong> s</span>
           </div>
-          <p className="hero-countdown-date">avant le 26 Mars 2027</p>
         </div>
-        <p className="hero-tagline">Ensemble pour toujours</p>
-        <div className="hero-date">
-          <span className="date-day">26</span>
-          <span className="date-month">Mars</span>
-          <span className="date-year">2027</span>
-        </div>
+        <p className="hero-tagline">Deux cœurs, une seule âme</p>
       </div>
       <div className="hero-image">
         {/* Remplacez cette URL par votre photo de couple */}

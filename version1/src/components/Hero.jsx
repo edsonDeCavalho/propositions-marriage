@@ -46,22 +46,20 @@ const Hero = () => {
           <span className="hero-ampersand">&</span>
           <span className="hero-name">Lydia</span>
         </h1>
+        <div className="hero-date">
+          <span className="date-day">26</span>
+          <span className="date-month">Mars</span>
+          <span className="date-year">2027</span>
+        </div>
         <div className="hero-countdown">
-          <p className="hero-countdown-label">Plus que</p>
           <div className="hero-countdown-grid">
             <span className="hero-countdown-item"><strong>{countdown.days}</strong> jours</span>
             <span className="hero-countdown-item"><strong>{countdown.hours}</strong> h</span>
             <span className="hero-countdown-item"><strong>{countdown.minutes}</strong> min</span>
             <span className="hero-countdown-item"><strong>{countdown.seconds}</strong> s</span>
           </div>
-          <p className="hero-countdown-date">avant le 26 Mars 2027</p>
         </div>
         <p className="hero-tagline">Deux cœurs, une seule âme</p>
-        <div className="hero-date">
-          <span className="date-day">26</span>
-          <span className="date-month">Mars</span>
-          <span className="date-year">2027</span>
-        </div>
       </div>
       <div 
         className="hero-image" 

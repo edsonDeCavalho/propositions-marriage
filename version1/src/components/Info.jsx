@@ -30,7 +30,7 @@ const Info = () => {
   return (
     <section id="infos" className="info" ref={infoRef}>
       <div className="container">
-        <h2 className="section-title">Informations Pratiques</h2>
+        <h2 className="section-title">Détails du Mariage</h2>
         <div className="info-grid">
           <div className="info-card">
             <div className="info-icon">📅</div>

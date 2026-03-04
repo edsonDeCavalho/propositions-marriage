@@ -38,20 +38,18 @@ const Hero = () => {
             <span className={styles.name}>Lydia</span>
           </h1>
         </div>
+        <div className={styles.dateContainer}>
+          <p className={styles.date}>26 Mars 2027</p>
+        </div>
         <div className={styles.countdown}>
-          <p className={styles.countdownLabel}>Plus que</p>
           <div className={styles.countdownGrid}>
             <span className={styles.countdownItem}><strong>{countdown.days}</strong> jours</span>
             <span className={styles.countdownItem}><strong>{countdown.hours}</strong> h</span>
             <span className={styles.countdownItem}><strong>{countdown.minutes}</strong> min</span>
             <span className={styles.countdownItem}><strong>{countdown.seconds}</strong> s</span>
           </div>
-          <p className={styles.countdownDate}>avant le 26 Mars 2027</p>
         </div>
-        <div className={styles.dateContainer}>
-          <p className={styles.dateLabel}>Nous nous unissons</p>
-          <p className={styles.date}>26 Mars 2027</p>
-        </div>
+        <p className={styles.tagline}>Deux cœurs, une seule âme</p>
         <div className={styles.decorativeLine}></div>
       </div>
     </section>

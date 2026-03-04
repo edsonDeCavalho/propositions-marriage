@@ -51,7 +51,7 @@ src/
 
 L'animation d'introduction comprend :
 1. Affichage d'une enveloppe centrée en plein écran
-2. Sceau de cire avec initiales "Y & L"
+2. Sceau de cire avec initiales "L & Y"
 3. Au clic sur le sceau : rotation et effet de craquement
 4. Ouverture de l'enveloppe en deux parties (haut et bas)
 5. Transition vers le contenu principal
