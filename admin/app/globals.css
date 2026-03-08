@@ -271,6 +271,11 @@ body {
   overflow: auto;
 }
 
+/* Mobile nav (visible only on small screens) */
+.dashboard-mobile-nav {
+  display: none;
+}
+
 .dashboard-header {
   margin-bottom: 2rem;
 }
@@ -593,6 +598,49 @@ body {
 
   .dashboard-main {
     padding: 1.5rem 1rem;
+  }
+
+  /* Mobile nav: onglets Confirmations / Enfants / Préf. alimentaires */
+  .dashboard-mobile-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 0;
+  }
+
+  .mobile-nav-item {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.75rem 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--card);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+
+  .mobile-nav-item:hover {
+    color: var(--text);
+    background: var(--bg-elevated);
+  }
+
+  .mobile-nav-item.active {
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-color: var(--accent);
+    font-weight: 600;
+  }
+
+  .mobile-nav-item .nav-icon {
+    font-size: 0.65rem;
   }
 
   .stats-grid {

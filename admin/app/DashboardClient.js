@@ -331,6 +331,36 @@ export default function DashboardClient() {
       </aside>
 
       <main className="dashboard-main">
+        <nav className="dashboard-mobile-nav" aria-label="Onglets">
+          <button
+            type="button"
+            className={`mobile-nav-item ${activeTab === 'confirmations' ? 'active' : ''}`}
+            onClick={() => setActiveTab('confirmations')}
+            aria-current={activeTab === 'confirmations' ? 'page' : undefined}
+          >
+            <span className="nav-icon" aria-hidden>◇</span>
+            Confirmations
+          </button>
+          <button
+            type="button"
+            className={`mobile-nav-item ${activeTab === 'enfants' ? 'active' : ''}`}
+            onClick={() => setActiveTab('enfants')}
+            aria-current={activeTab === 'enfants' ? 'page' : undefined}
+          >
+            <span className="nav-icon" aria-hidden>◆</span>
+            Enfants
+          </button>
+          <button
+            type="button"
+            className={`mobile-nav-item ${activeTab === 'dietary' ? 'active' : ''}`}
+            onClick={() => setActiveTab('dietary')}
+            aria-current={activeTab === 'dietary' ? 'page' : undefined}
+          >
+            <span className="nav-icon" aria-hidden>◎</span>
+            Préf. alimentaires
+          </button>
+        </nav>
+
         {activeTab === 'confirmations' && (
           <header className="dashboard-header">
             <h2 className="dashboard-heading">Tableau de bord</h2>
