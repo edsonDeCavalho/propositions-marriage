@@ -1,5 +1,5 @@
 server:
-  port: 93
+  port: 8093
 
 spring:
   data:
