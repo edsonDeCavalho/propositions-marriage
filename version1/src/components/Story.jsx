@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 
 const base = import.meta.env.BASE_URL
 const images = [
-  `${base}images/love-story-1.png`,
+  `${base}images/love-story-1.jpg`,
   `${base}images/love-story-2.png`,
   `${base}images/love-story-3.png`
 ]

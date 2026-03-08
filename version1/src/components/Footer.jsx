@@ -11,7 +11,7 @@ const Footer = () => {
           </div>
           <div className="footer-section">
             <h4>Contact</h4>
-            <p><span className="emoji">📧</span> contact@yannicklydia.fr</p>
+            <p><span className="emoji">📧</span> <a href="mailto:lydiayannick0327@gmail.com" className="footer-contact-link">lydiayannick0327@gmail.com</a></p>
             <p><span className="emoji">📞</span> +33 X XX XX XX XX</p>
           </div>
           <div className="footer-section">

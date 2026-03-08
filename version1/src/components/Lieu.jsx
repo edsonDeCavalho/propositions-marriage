@@ -25,19 +25,38 @@ const Lieu = () => {
     return () => observer.disconnect()
   }, [])
 
+  const base = import.meta.env.BASE_URL || ''
+
   return (
     <section id="lieu" className="lieu" ref={sectionRef}>
       <div className="container">
         <h2 className="section-title">Le Lieu</h2>
         <img src="/images/flowers/flower3.png" alt="" className="lieu-flower-deco" aria-hidden="true" />
-        <div className="lieu-content">
+
+        <div className="lieu-content lieu-content--ceremony">
           <div className="lieu-image">
-            <img src="/images/endroid.avif" alt="L'Orangerie de l'Orée du Bois - Lieu du mariage" />
+            <img src={`${base}images/marie-choisie-leroi.webp`} alt="Mairie de Choisy-le-Roi - Cérémonie" />
           </div>
           <div className="lieu-info">
-            <h3 className="lieu-name">L&apos;Orangerie de l&apos;Orée du Bois</h3>
+            <h3 className="lieu-name">Cérémonie — Mairie de Choisy-le-Roi</h3>
             <p className="lieu-intro">
-              Un lieu de réception unique au cœur des 1000 hectares de la forêt de Rosny-sur-Seine, dans les Yvelines.
+              La cérémonie civile aura lieu à la mairie de Choisy-le-Roi.
+            </p>
+            <div className="lieu-address">
+              <strong>Adresse</strong>
+              <p>Pl. Gabriel Péri<br />94600 Choisy-le-Roi</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="lieu-content">
+          <div className="lieu-image">
+            <img src={`${base}images/endroid.avif`} alt="L'Orangerie de l'Orée du Bois - Lieu du mariage" />
+          </div>
+          <div className="lieu-info">
+            <h3 className="lieu-name">Réception — L&apos;Orangerie de l&apos;Orée du Bois</h3>
+            <p className="lieu-intro">
+              Un lieu de réception unique au cœur de la forêt de Rosny-sur-Seine, dans les Yvelines.
             </p>
             <div className="lieu-address">
               <strong>Adresse</strong>
@@ -45,9 +64,6 @@ const Lieu = () => {
             </div>
             <p className="lieu-waze">
               Dans Waze, indiquer : <em>&laquo; L&apos;Orangerie de l&apos;Orée du Bois, Rosny sur Seine &raquo;</em>
-            </p>
-            <p className="lieu-desc">
-              1 domaine, 3 espaces de réception : Le Petit Château, L&apos;Orangerie et La Grange. En cocktail 50 à 300 personnes ou plus, en dîner assis 50 à 200 ou plus. 55 couchages sur place, 200 de plus à proximité. Piscine sécurisée &amp; chauffée en saison. Événement clé en main ou location sèche.
             </p>
             <a
               href="https://www.lorangeriedeloreedubois.com/galerie"

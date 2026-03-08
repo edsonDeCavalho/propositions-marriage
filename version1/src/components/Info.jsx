@@ -35,7 +35,7 @@ const Info = () => {
           <div className="info-card">
             <div className="info-icon">📅</div>
             <h3>Date</h3>
-            <p>Samedi 26 Mars 2027</p>
+            <p>Vendredi 26 Mars 2027</p>
           </div>
           <div className="info-card">
             <div className="info-icon">⏰</div>

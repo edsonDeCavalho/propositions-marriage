@@ -31,12 +31,20 @@ echo "🛑 Arrêt de tous les projets..."
 pm2 stop all 2>/dev/null || true
 pm2 delete all 2>/dev/null || true
 
-# Libérer les ports au cas où
-echo "🔍 Libération des ports 90, 91, 92, 93..."
+# Libérer les ports au cas où (frontend version1, anciennes versions, backend)
+echo "🔍 Libération des ports 90, 91, 92, 93, 8080..."
 kill_port 90
 kill_port 91
 kill_port 92
 kill_port 93
+kill_port 8080
+
+# Optionnel : arrêter le conteneur MongoDB
+if command -v docker &> /dev/null; then
+    if docker ps -a --format '{{.Names}}' 2>/dev/null | grep -q 'yannick-mongo'; then
+        docker stop yannick-mongo 2>/dev/null && echo "🗄️  Conteneur MongoDB arrêté" || true
+    fi
+fi
 
 echo "✅ Tous les projets sont arrêtés et les ports sont libérés"
 echo ""

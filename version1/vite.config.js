@@ -7,6 +7,12 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 90,
     strictPort: true,
+    allowedHosts: [
+      'ly.edsondecarvalho.com',
+      'v1marige.shareprinto.com',
+      '51.178.142.95',
+      'localhost',
+    ],
   },
   preview: {
     host: '0.0.0.0',
@@ -14,10 +20,9 @@ export default defineConfig({
     strictPort: true,
     allowedHosts: [
       'v1marige.shareprinto.com',
-      'v2marige.shareprinto.com',
-      'v3marige.shareprinto.com',
-      'v4marige.shareprinto.com',
       '51.178.142.95',
+      'localhost',
+      'ly.edsondecarvalho.com',
     ],
   },
 })

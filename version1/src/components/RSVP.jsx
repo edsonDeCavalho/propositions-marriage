@@ -13,10 +13,12 @@ const RSVP = () => {
     plusUnRelation: '',
     dietary: '',
     hasEnfants: '',
+    organiserSurprise: '',
     message: ''
   })
   const [enfants, setEnfants] = useState([]) // [{ prenom: '', age: '' }, ...]
   const [showSuccess, setShowSuccess] = useState(false)
+  const [showSurprisePopup, setShowSurprisePopup] = useState(false)
   const [errors, setErrors] = useState({})
   const [submitting, setSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState(null)
@@ -54,7 +56,6 @@ const RSVP = () => {
     if (!formData.name.trim()) newErrors.name = 'Le nom est requis'
     if (!formData.telephone.trim()) newErrors.telephone = 'Le téléphone est requis'
     if (!formData.attendance) newErrors.attendance = 'Veuillez indiquer votre présence'
-    if (!formData.dietary.trim()) newErrors.dietary = 'Les préférences alimentaires sont requises'
     if (formData.plusUn) {
       if (!formData.plusUnNom.trim()) newErrors.plusUnNom = 'Le nom et prénom du +1 sont requis'
       if (!formData.plusUnRelation.trim()) newErrors.plusUnRelation = 'Merci de préciser la relation'
@@ -74,7 +75,7 @@ const RSVP = () => {
     return newErrors
   }
 
-  const RSVP_API = import.meta.env.VITE_RSVP_API_URL || 'http://localhost:3001'
+  const RSVP_API = import.meta.env.VITE_RSVP_API_URL || 'http://localhost:8080'
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -93,6 +94,7 @@ const RSVP = () => {
       ...formData,
       enfants: formData.hasEnfants === 'oui' ? enfants : [],
       message: (formData.message || '') + messagePlusUn,
+      organiserSurprise: formData.organiserSurprise === 'oui',
       version: 'version1'
     }
     try {
@@ -102,15 +104,36 @@ const RSVP = () => {
         body: JSON.stringify(payload)
       })
       if (!res.ok) throw new Error('Erreur envoi')
+      const wantsSurprise = formData.organiserSurprise === 'oui'
+      setShowSurprisePopup(wantsSurprise)
       setShowSuccess(true)
-      setTimeout(() => {
-        document.getElementById('rsvp-success')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
-      }, 100)
+      if (!wantsSurprise) {
+        setTimeout(() => {
+          document.getElementById('rsvp-success')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        }, 100)
+      }
     } catch (err) {
       setSubmitError('Votre message n\'a pas pu être envoyé. Réessayez ou contactez-nous par email.')
     } finally {
       setSubmitting(false)
     }
+  }
+
+  if (showSuccess && showSurprisePopup) {
+    return (
+      <section id="rsvp" className="rsvp">
+        <div className="container">
+          <div className="rsvp-popup-overlay" onClick={() => setShowSurprisePopup(false)} aria-hidden="true" />
+          <div className="rsvp-popup" role="dialog" aria-labelledby="rsvp-popup-title">
+            <div className="success-icon">✓</div>
+            <h3 id="rsvp-popup-title">Merci !</h3>
+            <p>Votre confirmation a bien été reçue.</p>
+            <p className="rsvp-popup-surprise">Les témoins vont vous contacter pour organiser une surprise.</p>
+            <button type="button" className="btn-close-popup" onClick={() => setShowSurprisePopup(false)}>Fermer</button>
+          </div>
+        </div>
+      </section>
+    )
   }
 
   if (showSuccess) {
@@ -253,15 +276,14 @@ const RSVP = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="dietary">Préférences alimentaires *</label>
+            <label htmlFor="dietary">Préférences alimentaires</label>
             <textarea
               id="dietary"
               name="dietary"
               rows="3"
-              placeholder="Allergies, régimes spéciaux, végétarien, etc."
+              placeholder="Allergies, régimes spéciaux, végétarien, etc. (optionnel)"
               value={formData.dietary}
               onChange={handleChange}
-              required
               style={{ borderColor: errors.dietary ? '#e74c3c' : '' }}
             />
             {errors.dietary && <span className="form-error">{errors.dietary}</span>}
@@ -335,6 +357,37 @@ const RSVP = () => {
               onChange={handleChange}
             />
           </div>
+
+          <div className="form-group">
+            <label>Voulez-vous organiser une surprise ou quelque chose pour les mariés ?</label>
+            <p className="rsvp-surprise-intro">
+              Si vous souhaitez organiser une petite surprise, un discours, une animation ou tout autre joli secret pour notre mariage, vous pouvez nous l’indiquer ci-dessous.
+              Nos témoins prendront contact avec vous afin de coordonner tout cela en toute discrétion.
+            </p>
+            <div className="radio-group">
+              <label className="radio-label">
+                <input
+                  type="radio"
+                  name="organiserSurprise"
+                  value="non"
+                  checked={formData.organiserSurprise === 'non'}
+                  onChange={handleChange}
+                />
+                <span>Non</span>
+              </label>
+              <label className="radio-label">
+                <input
+                  type="radio"
+                  name="organiserSurprise"
+                  value="oui"
+                  checked={formData.organiserSurprise === 'oui'}
+                  onChange={handleChange}
+                />
+                <span>Oui</span>
+              </label>
+            </div>
+          </div>
+
           {submitError && <p className="form-error" style={{ marginBottom: '1rem' }}>{submitError}</p>}
           <button type="submit" className="btn-submit" disabled={submitting}>{submitting ? 'Envoi…' : 'Confirmer'}</button>
         </form>

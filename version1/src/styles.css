@@ -455,6 +455,10 @@ body {
     align-items: start;
 }
 
+.lieu-content + .lieu-content {
+    margin-top: var(--spacing-xl);
+}
+
 .lieu-image {
     border-radius: var(--border-radius);
     overflow: hidden;
@@ -870,6 +874,14 @@ body {
     font-style: italic;
 }
 
+.rsvp-surprise-intro {
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+    margin-top: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.5;
+}
+
 .checkbox-label {
     display: flex;
     align-items: center;
@@ -994,6 +1006,68 @@ body {
 .rsvp-success p {
     color: var(--color-text);
     font-size: 1.1rem;
+}
+
+/* Popup succès surprise */
+.rsvp-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.rsvp-popup {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    background: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium);
+    padding: var(--spacing-lg);
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+}
+
+.rsvp-popup .success-icon {
+    margin-bottom: var(--spacing-md);
+}
+
+.rsvp-popup h3 {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    color: var(--color-text-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.rsvp-popup p {
+    color: var(--color-text);
+    font-size: 1rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.rsvp-popup-surprise {
+    font-weight: 600;
+    color: var(--color-accent) !important;
+}
+
+.btn-close-popup {
+    margin-top: var(--spacing-md);
+    padding: 0.6rem 1.5rem;
+    background: var(--color-accent);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-close-popup:hover {
+    opacity: 0.9;
 }
 
 /* Section Hébergement */
@@ -1129,12 +1203,45 @@ body {
 }
 .dresscode-colors-label:first-of-type { margin-top: 0; }
 
+.dresscode-subtitle {
+    font-size: 0.95rem;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-lg);
+    font-style: italic;
+}
+
 .dresscode-swatches {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.5rem;
     margin-bottom: 0.25rem;
+}
+
+.dresscode-swatches--cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+    justify-items: stretch;
+}
+
+.dresscode-swatch-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 5rem;
+    padding: 1rem 0.75rem;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-align: center;
+}
+
+.dresscode-swatch-hex {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .dresscode-swatch {
@@ -1179,6 +1286,15 @@ body {
 .footer-section p {
     margin-bottom: var(--spacing-xs);
     opacity: 0.9;
+}
+
+.footer-contact-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-contact-link:hover {
+    text-decoration: underline;
 }
 
 .social-links {

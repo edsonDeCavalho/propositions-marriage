@@ -1,30 +1,43 @@
-# Admin — Confirmations de présence
+# Admin — Confirmations de présence (Next.js)
 
-Interface d’administration pour consulter les réponses RSVP du mariage et les exporter en Excel.
+Interface d’administration pour consulter les réponses RSVP du mariage (MongoDB) et les exporter en Excel.
+
+## Prérequis
+
+- Le **backend Kotlin** doit tourner et exposer `GET /api/rsvp` (par défaut `http://localhost:8080`).
+- MongoDB doit être démarré (le backend s’y connecte).
 
 ## Lancer l’admin
 
-1. **Démarrer le serveur RSVP** (à la racine du projet) :
+1. **Démarrer le backend** (à la racine du projet) :
    ```bash
-   cd server && npm install && npm run dev
+   cd backend && ./gradlew bootRun
    ```
-   Le serveur tourne sur `http://localhost:3001` et enregistre les saisies dans `admin/data/rsvp-submissions.csv`.
 
-2. **Lancer l’admin** :
+2. **Configurer l’URL de l’API** (optionnel en dev) :
+   ```bash
+   cp .env.local.example .env.local
+   # Éditer .env.local si besoin : NEXT_PUBLIC_RSVP_API_URL=http://localhost:8080
+   ```
+
+3. **Lancer l’admin** :
    ```bash
    cd admin && npm install && npm run dev
    ```
-   L’admin est disponible sur `http://localhost:5174`.
+   L’admin est disponible sur **http://localhost:3000**.
 
-En développement, les appels à `/api/rsvp` sont proxyfiés vers le serveur (voir `vite.config.js`).
+## Build production
+
+```bash
+cd admin
+npm run build
+npm start
+```
+
+Définir `NEXT_PUBLIC_RSVP_API_URL` vers l’URL de votre API au build (ou dans `.env.production`).
 
 ## Fonctionnalités
 
-- Liste des confirmations (date, nom, email, téléphone, présence, +1, préférences alimentaires, enfants, message).
-- Rafraîchissement manuel et auto toutes les 30 s.
+- Liste de toutes les personnes (RsvpEntity) : date, nom, email, téléphone, présence, +1 (nom, relation), préférences alimentaires, enfants, message.
+- Rafraîchissement manuel et automatique toutes les 30 s.
 - **Exporter en Excel** : télécharge un fichier `.xlsx` avec toutes les données.
-
-## Production
-
-- Définir `VITE_RSVP_API_URL` vers l’URL de votre API (ex. `https://api.example.com`) au build.
-- Les sites (version1, version2, version3) doivent aussi avoir `VITE_RSVP_API_URL` pointant vers la même API.

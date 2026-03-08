@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   apps: [
     {
-      name: 'version1',
+      name: 'mariage',
       cwd: path.resolve(__dirname, 'version1'),
       script: './start-preview.sh',
       interpreter: 'bash',
@@ -14,62 +14,24 @@ module.exports = {
       env: {
         NODE_ENV: 'production'
       },
-      error_file: path.resolve(__dirname, 'logs/version1-error.log'),
-      out_file: path.resolve(__dirname, 'logs/version1-out.log'),
+      error_file: path.resolve(__dirname, 'logs/mariage-error.log'),
+      out_file: path.resolve(__dirname, 'logs/mariage-out.log'),
       log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
       merge_logs: true,
     },
     {
-      name: 'version2',
-      cwd: path.resolve(__dirname, 'version2'),
-      script: './start-preview.sh',
-      interpreter: 'bash',
+      name: 'backend',
+      cwd: path.resolve(__dirname, 'backend'),
+      script: 'java',
+      args: ['-jar', path.resolve(__dirname, 'backend/build/libs/yannick-rsvp-kotlin-0.0.1-SNAPSHOT.jar')],
+      interpreter: 'none',
       instances: 1,
       autorestart: true,
       watch: false,
-      max_memory_restart: '1G',
-      env: {
-        NODE_ENV: 'production'
-      },
-      error_file: path.resolve(__dirname, 'logs/version2-error.log'),
-      out_file: path.resolve(__dirname, 'logs/version2-out.log'),
+      max_memory_restart: '512M',
+      error_file: path.resolve(__dirname, 'logs/backend-error.log'),
+      out_file: path.resolve(__dirname, 'logs/backend-out.log'),
       log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
-      merge_logs: true,
-    },
-    {
-      name: 'version3',
-      cwd: path.resolve(__dirname, 'version3'),
-      script: './start-preview.sh',
-      interpreter: 'bash',
-      instances: 1,
-      autorestart: true,
-      watch: false,
-      max_memory_restart: '1G',
-      env: {
-        NODE_ENV: 'production'
-      },
-      error_file: path.resolve(__dirname, 'logs/version3-error.log'),
-      out_file: path.resolve(__dirname, 'logs/version3-out.log'),
-      log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
-      merge_logs: true,
-    },
-    {
-      name: 'version4',
-      cwd: path.resolve(__dirname, 'version4'),
-      script: './start-preview.sh',
-      interpreter: 'bash',
-      instances: 1,
-      autorestart: true,
-      watch: false,
-      max_memory_restart: '1G',
-      env: {
-        NODE_ENV: 'production'
-      },
-      error_file: path.resolve(__dirname, 'logs/version4-error.log'),
-      out_file: path.resolve(__dirname, 'logs/version4-out.log'),
-      log_date_format: 'YYYY-MM-DD HH:mm:ss Z',
-      merge_logs: true,
     },
   ],
 };
-
