@@ -323,7 +323,7 @@ export default function AdminPage() {
 
         {error && (
           <div className="dashboard-error">
-            Impossible de charger les données. Vérifiez que le backend RSVP tourne (port 8081).
+            Impossible de charger les données. Vérifiez que le backend RSVP tourne (port 93).
           </div>
         )}
 

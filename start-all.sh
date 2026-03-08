@@ -26,12 +26,11 @@ kill_port() {
 echo "🚀 Démarrage du site mariage (version 1) + backend + base de données..."
 
 # Libérer le port du frontend (version 1) et des anciennes versions
-echo "🔍 Libération des ports 90 (version1), 91, 92, 93 (anciennes versions), 8081 (backend)..."
+echo "🔍 Libération des ports 90 (version1), 91, 92 (anciennes versions), 93 (backend)..."
 kill_port 90
 kill_port 91
 kill_port 92
 kill_port 93
-kill_port 8081
 echo "✅ Ports libérés"
 
 mkdir -p logs
@@ -129,6 +128,6 @@ echo "📊 Statut :"
 pm2 status
 echo ""
 echo "🌐 Frontend (version 1) : http://localhost:90 (ou votre domaine)"
-echo "🔧 Backend API         : http://localhost:8081"
+echo "🔧 Backend API         : http://localhost:93"
 echo "🗄️  MongoDB             : localhost:27017"
 echo ""

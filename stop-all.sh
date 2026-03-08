@@ -32,12 +32,11 @@ pm2 stop all 2>/dev/null || true
 pm2 delete all 2>/dev/null || true
 
 # Libérer les ports au cas où (frontend version1, anciennes versions, backend)
-echo "🔍 Libération des ports 90, 91, 92, 93, 8081..."
+echo "🔍 Libération des ports 90, 91, 92, 93 (backend)..."
 kill_port 90
 kill_port 91
 kill_port 92
 kill_port 93
-kill_port 8081
 
 # Optionnel : arrêter le conteneur MongoDB
 if command -v docker &> /dev/null; then

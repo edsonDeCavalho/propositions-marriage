@@ -1,4 +1,4 @@
-const BACKEND_URL = process.env.NEXT_PUBLIC_RSVP_API_URL || process.env.RSVP_API_URL || 'http://localhost:8081'
+const BACKEND_URL = process.env.NEXT_PUBLIC_RSVP_API_URL || process.env.RSVP_API_URL || 'http://localhost:93'
 
 export async function DELETE(request, { params }) {
   const id = params?.id
