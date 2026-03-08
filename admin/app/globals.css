@@ -329,6 +329,31 @@ body {
   border-color: var(--text-muted);
 }
 
+.btn-delete {
+  padding: 0.35rem 0.6rem;
+  font-size: 0.8rem;
+  font-family: inherit;
+  color: var(--danger);
+  background: transparent;
+  border: 1px solid var(--danger);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: opacity 0.2s, background 0.2s;
+}
+
+.btn-delete:hover:not(:disabled) {
+  background: var(--danger-soft);
+}
+
+.btn-delete:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cell-actions {
+  white-space: nowrap;
+}
+
 .filters-result {
   font-size: 0.85rem;
   color: var(--text-muted);

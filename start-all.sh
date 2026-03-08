@@ -36,6 +36,38 @@ echo "✅ Ports libérés"
 
 mkdir -p logs
 
+# —— Java (requis pour le backend) ——
+if [ -z "$JAVA_HOME" ] || ! command -v java &> /dev/null; then
+    if [ -n "$JAVA_HOME" ] && [ -x "$JAVA_HOME/bin/java" ]; then
+        export PATH="$JAVA_HOME/bin:$PATH"
+    elif command -v java &> /dev/null; then
+        JAVA_BIN=$(command -v java)
+        if [ -L "$JAVA_BIN" ]; then
+            JAVA_BIN=$(readlink -f "$JAVA_BIN" 2>/dev/null || realpath "$JAVA_BIN" 2>/dev/null || echo "$JAVA_BIN")
+        fi
+        export JAVA_HOME="${JAVA_BIN%/bin/java}"
+        export PATH="$JAVA_HOME/bin:$PATH"
+    else
+        for dir in /usr/lib/jvm/java-17-openjdk-amd64 /usr/lib/jvm/java-17-openjdk /usr/lib/jvm/java-11-openjdk-amd64 /usr/lib/jvm/java-11-openjdk /opt/java/openjdk; do
+            if [ -x "$dir/bin/java" ]; then
+                export JAVA_HOME="$dir"
+                export PATH="$JAVA_HOME/bin:$PATH"
+                break
+            fi
+        done
+    fi
+fi
+if ! command -v java &> /dev/null; then
+    echo "❌ Java introuvable. Le backend en a besoin."
+    echo ""
+    echo "   Sur Debian/Ubuntu : sudo apt update && sudo apt install -y openjdk-17-jdk"
+    echo "   Puis définir : export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64"
+    echo "   (ajoutez ces lignes dans ~/.bashrc pour les garder)"
+    echo ""
+    exit 1
+fi
+echo "☕ Java : $JAVA_HOME ($(java -version 2>&1 | head -1))"
+
 if ! command -v pm2 &> /dev/null; then
     echo "❌ PM2 n'est pas installé. Installation en cours..."
     npm install -g pm2

@@ -59,6 +59,7 @@ export default function AdminPage() {
   const [filterPlusUn, setFilterPlusUn] = useState('all')
   const [filterSurprise, setFilterSurprise] = useState('all')
   const [filterEnfants, setFilterEnfants] = useState('all')
+  const [deletingId, setDeletingId] = useState(null)
 
   const fetchList = useCallback(async () => {
     setLoading(true)
@@ -220,6 +221,27 @@ export default function AdminPage() {
   }
 
   const dietaryWithPrefCount = useMemo(() => list.filter((r) => (r.preferencesAlimentaires || '').trim().length > 0).length, [list])
+
+  const handleDelete = async (id, nom) => {
+    if (!id) return
+    const message = `Supprimer la réservation de "${nom || 'cette personne'}" ? Cette action est irréversible.`
+    if (!window.confirm(message)) return
+    setDeletingId(id)
+    try {
+      const res = await fetch(`/api/rsvp/${id}`, { method: 'DELETE' })
+      if (res.status === 404) {
+        alert('Réservation introuvable.')
+        await fetchList()
+        return
+      }
+      if (!res.ok) throw new Error('Erreur lors de la suppression')
+      await fetchList()
+    } catch (e) {
+      alert(e.message || 'Impossible de supprimer.')
+    } finally {
+      setDeletingId(null)
+    }
+  }
 
   return (
     <div className="dashboard">
@@ -547,6 +569,7 @@ export default function AdminPage() {
                         <th>Surprise</th>
                         <th>Enfants</th>
                         <th>Message</th>
+                        <th className="cell-actions">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -568,6 +591,17 @@ export default function AdminPage() {
                           <td>{row.organiserSurprise ? 'Oui' : '—'}</td>
                           <td className="cell-enfants">{formatEnfants(row.enfants)}</td>
                           <td className="cell-message">{row.message || '—'}</td>
+                          <td className="cell-actions">
+                            <button
+                              type="button"
+                              className="btn-delete"
+                              onClick={() => handleDelete(row.id, row.nom)}
+                              disabled={deletingId === row.id}
+                              title="Supprimer cette réservation"
+                            >
+                              {deletingId === row.id ? '…' : 'Supprimer'}
+                            </button>
+                          </td>
                         </tr>
                       ))}
                     </tbody>

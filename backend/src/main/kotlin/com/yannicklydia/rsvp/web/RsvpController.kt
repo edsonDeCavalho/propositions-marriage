@@ -22,7 +22,7 @@ import java.time.Instant
         "https://v1marige.shareprinto.com"
     ],
     allowedHeaders = ["*"],
-    methods = [RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS]
+    methods = [RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE, RequestMethod.OPTIONS]
 )
 class RsvpController(
     private val repository: RsvpRepository,
@@ -69,5 +69,15 @@ class RsvpController(
     @GetMapping
     fun list(): List<RsvpEntity> =
         repository.findAll().sortedByDescending { it.date }
+
+    @DeleteMapping("/{id}")
+    fun delete(@PathVariable id: String): ResponseEntity<Any> {
+        if (!repository.existsById(id)) {
+            return ResponseEntity.notFound().build()
+        }
+        repository.deleteById(id)
+        logger.info("Réponse RSVP supprimée: id={}", id)
+        return ResponseEntity.noContent().build()
+    }
 }
 
