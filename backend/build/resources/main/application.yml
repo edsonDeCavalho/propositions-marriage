@@ -1,0 +1,15 @@
+server:
+  port: 8093
+
+spring:
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/yannick_lydia}
+      auto-index-creation: true
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    com.yannicklydia.rsvp: DEBUG
+
