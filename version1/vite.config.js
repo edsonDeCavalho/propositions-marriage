@@ -13,11 +13,23 @@ export default defineConfig({
       '51.178.142.95',
       'localhost',
     ],
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8081',
+        changeOrigin: true,
+      },
+    },
   },
   preview: {
     host: '0.0.0.0',
     port: 90,
     strictPort: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8081',
+        changeOrigin: true,
+      },
+    },
     allowedHosts: [
       'v1marige.shareprinto.com',
       '51.178.142.95',

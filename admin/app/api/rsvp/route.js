@@ -1,4 +1,4 @@
-const BACKEND_URL = process.env.NEXT_PUBLIC_RSVP_API_URL || process.env.RSVP_API_URL || 'http://localhost:8080'
+const BACKEND_URL = process.env.NEXT_PUBLIC_RSVP_API_URL || process.env.RSVP_API_URL || 'http://localhost:8081'
 
 export async function GET() {
   try {

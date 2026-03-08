@@ -75,7 +75,8 @@ const RSVP = () => {
     return newErrors
   }
 
-  const RSVP_API = import.meta.env.VITE_RSVP_API_URL || 'http://localhost:8080'
+  // En dev/preview : appeler /api (proxy Vite vers backend). En prod : VITE_RSVP_API_URL si défini.
+  const RSVP_API = import.meta.env.VITE_RSVP_API_URL ?? ''
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -98,7 +99,7 @@ const RSVP = () => {
       version: 'version1'
     }
     try {
-      const res = await fetch(`${RSVP_API}/api/rsvp`, {
+      const res = await fetch(`${RSVP_API ? RSVP_API.replace(/\/$/, '') : ''}/api/rsvp`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
