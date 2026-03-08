@@ -26,10 +26,11 @@ kill_port() {
 echo "🚀 Démarrage du site mariage (version 1) + backend + base de données..."
 
 # Libérer le port du frontend (version 1) et des anciennes versions
-echo "🔍 Libération des ports 90 (version1), 91, 92 (anciennes versions), 8093 (backend)..."
+echo "🔍 Libération des ports 90 (version1), 91, 92 (anciennes versions), 3000 (admin), 8093 (backend)..."
 kill_port 90
 kill_port 91
 kill_port 92
+kill_port 3000
 kill_port 8093
 echo "✅ Ports libérés"
 
@@ -110,12 +111,18 @@ echo "📦 Construction du projet frontend (version 1)..."
 cd version1 && npm run build && cd ..
 echo "✅ Projet frontend construit"
 
+# —— Admin Next.js ——
+echo ""
+echo "📦 Construction de l'admin..."
+cd admin && npm install --no-audit --no-fund -q && npm run build && cd ..
+echo "✅ Admin construit"
+
 echo ""
 echo "🛑 Arrêt des processus PM2 existants..."
 pm2 delete all 2>/dev/null || true
 
 echo ""
-echo "▶️  Démarrage avec PM2 (mariage + backend)..."
+echo "▶️  Démarrage avec PM2 (mariage + backend + admin)..."
 pm2 start ecosystem.config.js
 
 # Démarrer le backend après le frontend pour que les logs restent lisibles
@@ -128,6 +135,7 @@ echo "📊 Statut :"
 pm2 status
 echo ""
 echo "🌐 Frontend (version 1) : http://localhost:90 (ou votre domaine)"
+echo "📋 Admin               : http://localhost:3000"
 echo "🔧 Backend API         : http://localhost:8093"
 echo "🗄️  MongoDB             : localhost:27017"
 echo ""
