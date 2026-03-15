@@ -9,11 +9,8 @@ function hexToLuminance(hex) {
 }
 
 const DRESSCODE_COLORS = [
-  '#f3e9db', '#d7ccb6', '#c1cbb0', '#939780', '#736b54', '#343724',
-  '#6f5c3e', '#859475', '#b3b697', '#e4e0d7', '#cbab84', '#e3d3ba',
-  '#c0cebd', '#8fa187', '#6c805d', '#cfb3a5', '#998274', '#645445',
-  '#b2b2a6', '#79826f', '#c09d9b', '#999f85', '#503a2d', '#fcf1df',
-  '#dbcbbc', '#c5c6be', '#b79973',
+  '#6f5c3e', '#859475', '#b3b697', '#cfb3a5', '#645445',
+  '#b2b2a6', '#79826f', '#c09d9b',
 ]
 
 const DressCode = () => {

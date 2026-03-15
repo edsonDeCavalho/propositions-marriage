@@ -48,12 +48,25 @@ const Story = () => {
         <h2 className="section-title">Notre Histoire</h2>
         <div className="story-content">
           <div className="story-text">
+            <h3 className="story-lang-title"><span className="story-lang-emoji" aria-hidden>🇫🇷</span> Notre histoire</h3>
             <p className="story-intro">
-              C&apos;est dans un moment de grâce que nos chemins se sont croisés, comme deux étoiles qui se rencontrent dans la vaste étendue du ciel.
+              Notre histoire a commencé pendant nos études, à un moment où l&apos;on ne sait pas encore très bien où la vie nous mènera… mais visiblement, elle nous menait l&apos;un vers l&apos;autre.
               <br /><br />
-              Chaque jour passé ensemble a été une page de notre livre d&apos;amour, écrite avec tendresse, rires partagés et moments précieux.
+              Depuis, nous avons grandi ensemble, parcouru quelques coins du monde, accumulé des souvenirs et partagé beaucoup de fous rires.
               <br /><br />
-              Aujourd&apos;hui, nous sommes heureux de vous inviter à célébrer avec nous le début d&apos;un nouveau chapitre, celui où nos deux cœurs ne font plus qu&apos;un.
+              Entre voyages, projets et moments simples du quotidien, notre aventure continue… et cette fois, nous avons décidé d&apos;y ajouter un nouveau chapitre : notre mariage.
+              <br /><br />
+              Et nous serions très heureux de vous avoir à nos côtés pour le célébrer.
+            </p>
+            <h3 className="story-lang-title"><span className="story-lang-emoji" aria-hidden>🇵🇹</span> A nossa história</h3>
+            <p className="story-intro story-intro--pt">
+              A nossa história começou durante os nossos estudos, numa altura em que ainda não sabemos muito bem para onde a vida nos vai levar… mas, ao que parece, levava-nos um ao outro.
+              <br /><br />
+              Desde então, crescemos juntos, percorremos alguns cantos do mundo, acumulámos memórias e partilhámos muitas gargalhadas.
+              <br /><br />
+              Entre viagens, projetos e momentos simples do dia a dia, a nossa aventura continua… e desta vez decidimos acrescentar um novo capítulo: o nosso casamento.
+              <br /><br />
+              E ficaríamos muito felizes por vos ter ao nosso lado para o celebrar.
             </p>
           </div>
           <div className="story-image story-image--carousel">

@@ -336,6 +336,28 @@ body {
     font-style: italic;
 }
 
+.story-lang-title {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+    font-style: normal;
+}
+
+.story-text .story-lang-title:first-child {
+    margin-top: 0;
+}
+
+.story-lang-emoji {
+    margin-right: 0.35rem;
+}
+
+.story-intro--pt {
+    margin-top: 0;
+}
+
 .story-timeline {
     display: flex;
     flex-direction: column;

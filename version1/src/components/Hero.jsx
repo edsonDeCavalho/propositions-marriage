@@ -42,9 +42,9 @@ const Hero = () => {
       <div className="hero-overlay"></div>
       <div className="hero-content">
         <h1 className="hero-title">
-          <span className="hero-name">Yannick</span>
-          <span className="hero-ampersand">&</span>
           <span className="hero-name">Lydia</span>
+          <span className="hero-ampersand">&</span>
+          <span className="hero-name">Yannick</span>
         </h1>
         <div className="hero-date">
           <span className="date-day">26</span>

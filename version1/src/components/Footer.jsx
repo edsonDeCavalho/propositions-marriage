@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>Yannick & Lydia</h3>
+            <h3>Lydia & Yannick</h3>
             <p>Merci de partager ce moment précieux avec nous</p>
           </div>
           <div className="footer-section">
@@ -23,7 +23,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2027 Yannick & Lydia. Fait avec <span className="emoji">❤️</span> pour notre jour spécial.</p>
+          <p>&copy; 2027 Lydia & Yannick. Fait avec <span className="emoji">❤️</span> pour notre jour spécial.</p>
         </div>
       </div>
     </footer>

@@ -6,6 +6,7 @@ const témoins = [
   { name: 'Soukayna', photo: `${base}images/Soukayna.jpg` },
   { name: 'Lucas', photo: `${base}images/lucas.jpg` },
   { name: 'Acil', photo: `${base}images/acil.jpg` },
+  { name: 'Cécilia', photo: `${base}images/cecilia.png` },
 ]
 
 const Témoins = () => {
