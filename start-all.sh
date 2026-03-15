@@ -32,7 +32,12 @@ kill_port 91
 kill_port 92
 kill_port 3000
 kill_port 8093
-echo "✅ Ports libérés"
+echo "🛑 Arrêt de PM2 pour libérer les processus (backend, admin, frontend)..."
+pm2 delete all 2>/dev/null || true
+pm2 kill 2>/dev/null || true
+echo "⏳ Attente de la libération des fichiers (backend build)..."
+sleep 3
+echo "✅ Ports et processus libérés"
 
 mkdir -p logs
 
@@ -101,6 +106,7 @@ if [ ! -f ./gradlew ]; then
     echo "❌ Gradle wrapper absent dans backend/. Exécutez 'gradle wrapper' depuis backend/"
     exit 1
 fi
+./gradlew --stop 2>/dev/null || true
 ./gradlew build -x test --no-daemon -q
 cd ..
 echo "✅ Backend construit"
@@ -116,10 +122,6 @@ echo ""
 echo "📦 Construction de l'admin..."
 cd admin && npm install --no-audit --no-fund -q && npm run build && cd ..
 echo "✅ Admin construit"
-
-echo ""
-echo "🛑 Arrêt des processus PM2 existants..."
-pm2 delete all 2>/dev/null || true
 
 echo ""
 echo "▶️  Démarrage avec PM2 (mariage + backend + admin)..."
